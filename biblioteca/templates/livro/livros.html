@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+<!--analogia da folha de papel / extends lembra herança / extende para outras páginas-->
+
+<!--Blok = bloco -->
+{% block center %}
+  <h2> Lista de Livros</h2>
+
+  <a href="{% url 'livro_criar' %}" class="btn btn-success mb-3">Novo Cadastro</a>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        
+        <th>Nome</th>
+        <th>Autor</th>
+        <th>Numero de Páginas</th>
+        <th>Ano de publicação</th>
+        <th>Preço</th>
+        <th>Genero</th>
+        <th>Editora</th>
+        <th>Imagem</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!--abre o for -->
+      {% for livro in livros %}  
+      <tr>
+        <td>{{ livro.nome }}</td>
+        <td>{{ livro.autor }}</td>
+        <td>{{ livro.numero_paginas }}</td>
+        <td>{{ livro.ano_publicacao }}</td>
+        <td>{{ livro.preco }}</td>
+        <td>{{ livro.genero }}</td>
+        <td>{{ livro.editora }}</td>
+        <td><img class="img-fluid" style="width: 50px;" src="{{livro.imagem.url}}" alt=""></td>
+        <td>
+          <a href="{% url 'livro_editar' id=livro.id %}" class="btn btn-primary btn-sm">Editar</a>
+          <a href="{% url 'livro_remover' id=livro.id %}" class="btn btn-danger btn-sm">Remover</a>
+        </td>
+      </tr>
+      <!--fecha o for-->
+      {% endfor %}
+    
+    </tbody>
+  </table>
+{% endblock %}

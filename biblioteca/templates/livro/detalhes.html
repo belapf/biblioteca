@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'index'  %}">
+            <img src="https://th.bing.com/th/id/R.4cda01a2aa7eb2fd68a026699c8e3187?rik=YjjZn71z4n4uhA&pid=ImgRaw&r=0"
+                width="50" height="50" class="d-inline-block align-top" alt="">
+            IC Biblioteca
+        </a>
+    </nav>
+    <div class="row col-md-auto m-auto">
+        <div class="col-md-6 col-md-12">
+            <img src="{{livros.imagem.url}}" width='300px' alt="Imagem do Livro">
+            
+        </div>
+        
+        <!--essa parte corresponde ao link das imagens -->
+        <div class="col-md-6 col-md-12">
+            <h1>{{livros.nome}}</h1>
+            <h5>Preço - {{livros.preco}} R$</h5>
+            <h5>Autor - {{livros.autor}}</h5>
+            <h5>Numero de paginas - {{livros.numero_paginas}}</h5>
+            <h5>Ano de publicacao - {{livros.ano_publicacao}}</h5>
+            <h5>Genero - {{livros.genero}}</h5>
+            <h5>Editora - {{livros.editora}}</h5>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block center %}
+<h2> Formulário de Cadastro dos Livros</h2>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        {{ form.nome }}
+    </div>
+
+    <div class="mb-3">
+        <label for="nome" class="form-label">Autor</label>
+        {{ form.autor }}
+    </div>
+
+    <div class="mb-3">
+        <label for="nome" class="form-label">Numero de páginas</label>
+        {{ form.numero_paginas }}
+    </div>
+
+
+    <div class="mb-3">
+        <label for="nome" class="form-label">Ano de publicacao</label>
+        {{ form.ano_publicacao }}
+    </div>
+
+    <div class="mb-3">
+        <label for="nome" class="form-label">Preço</label>
+        {{ form.preco }}
+    </div>
+
+    <div class="mb-3">
+        <label for="nome" class="form-label">Genero</label>
+        {{ form.genero }}
+    </div>
+
+    <div class="mb-3">
+        <label for="nome" class="form-label">Editora</label>
+        {{ form.editora }}
+    </div>
+    <div class="mb-3">
+        <label for="foto" class="form-label">Foto</label>
+        {{ form.imagem }}
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+</form>
+{% endblock %}
